@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let brownNoise = BrownNoiseGenerator()
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "waveform")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Brown Noise")
+                .font(.caption)
+                .foregroundStyle(.tint)
         }
         .padding()
     }
