@@ -18,6 +18,17 @@ struct ContentView: View {
             Text("Brown Noise")
                 .font(.caption)
                 .foregroundStyle(.tint)
+            
+            if let errorMessage = brownNoise.errorMessage {
+                Text(errorMessage)
+                    .foregroundStyle(.red)
+            }
+        }
+        .onAppear {
+            brownNoise.start()
+        }
+        .onDisappear {
+            brownNoise.stop()
         }
         .padding()
     }
